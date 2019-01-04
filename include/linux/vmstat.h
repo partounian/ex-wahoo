@@ -8,8 +8,7 @@
 #include <linux/vm_event_item.h>
 #include <linux/atomic.h>
 
-static int sysctl_stat_interval = 120;
-extern int sysctl_stat_interval;
+extern int sysctl_stat_interval = 1200;
 
 #ifdef CONFIG_VM_EVENT_COUNTERS
 /*

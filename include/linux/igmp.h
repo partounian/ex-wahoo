@@ -37,8 +37,7 @@ static inline struct igmpv3_query *
 	return (struct igmpv3_query *)skb_transport_header(skb);
 }
 
-static int sysctl_igmp_llm_reports = 0;
-extern int sysctl_igmp_llm_reports;
+extern int sysctl_igmp_llm_reports = 0;
 extern int sysctl_igmp_max_memberships;
 extern int sysctl_igmp_max_msf;
 extern int sysctl_igmp_qrv;

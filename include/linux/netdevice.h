@@ -3611,10 +3611,8 @@ struct rtnl_link_stats64 *dev_get_stats(struct net_device *dev,
 void netdev_stats_to_stats64(struct rtnl_link_stats64 *stats64,
 			     const struct net_device_stats *netdev_stats);
 
-static int		netdev_max_backlog = 128;
-extern int		netdev_max_backlog;
-static int		netdev_tstamp_prequeue = 0;
-extern int		netdev_tstamp_prequeue;
+extern int		netdev_max_backlog = 128;
+extern int		netdev_tstamp_prequeue = 0;
 extern int		weight_p;
 extern int		bpf_jit_enable;
 

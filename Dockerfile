@@ -21,7 +21,6 @@ RUN mkdir -p prebuilts/gcc/linux-x86/aarch64/ prebuilts/gcc/linux-x86/arm/ \
   git clone https://android.googlesource.com/platform/system/libufdt prebuilts-master/misc/linux-x86/libufdt
 
 ENV USE_CCACHE=1
-ENV LC_ALL=C
 ENV ANDROID_JACK_VM_ARGS="-Xmx8g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
 COPY . /src

@@ -996,8 +996,7 @@ static inline void perf_callchain_store(struct perf_callchain_entry *entry, u64 
 extern int sysctl_perf_event_paranoid;
 extern int sysctl_perf_event_mlock;
 extern int sysctl_perf_event_sample_rate;
-static int sysctl_perf_cpu_time_max_percent = 0;
-extern int sysctl_perf_cpu_time_max_percent;
+extern int sysctl_perf_cpu_time_max_percent = 0;
 
 extern void perf_sample_event_took(u64 sample_len_ns);
 

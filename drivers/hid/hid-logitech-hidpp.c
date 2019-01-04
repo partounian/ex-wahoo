@@ -28,12 +28,12 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Benjamin Tissoires <benjamin.tissoires@gmail.com>");
 MODULE_AUTHOR("Nestor Lopez Casado <nlopezcasad@logitech.com>");
 
-static bool disable_raw_mode;
+static bool disable_raw_mode = true;
 module_param(disable_raw_mode, bool, 0644);
 MODULE_PARM_DESC(disable_raw_mode,
 	"Disable Raw mode reporting for touchpads and keep firmware gestures.");
 
-static bool disable_tap_to_click;
+static bool disable_tap_to_click = true;
 module_param(disable_tap_to_click, bool, 0644);
 MODULE_PARM_DESC(disable_tap_to_click,
 	"Disable Tap-To-Click mode reporting for touchpads (only on the K400 currently).");

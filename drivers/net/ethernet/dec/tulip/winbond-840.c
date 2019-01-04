@@ -92,7 +92,7 @@ static int full_duplex[MAX_UNITS] = {-1, -1, -1, -1, -1, -1, -1, -1};
    Making the Tx ring too large decreases the effectiveness of channel
    bonding and packet priority.
    There are no ill effects from too-large receive rings. */
-#define TX_QUEUE_LEN	10		/* Limit ring entries actually used.  */
+#define TX_QUEUE_LEN	128		/* Limit ring entries actually used.  */
 #define TX_QUEUE_LEN_RESTART	5
 
 #define TX_BUFLIMIT	(1024-128)

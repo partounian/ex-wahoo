@@ -1,4 +1,4 @@
-#ifndef __LINUX_DCACHE_H
+vfs_cache_pressure#ifndef __LINUX_DCACHE_H
 #define __LINUX_DCACHE_H
 
 #include <linux/atomic.h>
@@ -522,7 +522,7 @@ static inline bool d_is_fallthru(const struct dentry *dentry)
 }
 
 
-extern int sysctl_vfs_cache_pressure;
+extern int sysctl_vfs_cache_pressure = 60;
 
 static inline unsigned long vfs_pressure_ratio(unsigned long val)
 {

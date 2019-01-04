@@ -58,7 +58,7 @@
 #include <net/gre.h>
 
 
-static bool log_ecn_error = true;
+static bool log_ecn_error = false;
 module_param(log_ecn_error, bool, 0644);
 MODULE_PARM_DESC(log_ecn_error, "Log packets received with corrupted ECN");
 

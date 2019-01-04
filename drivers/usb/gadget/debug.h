@@ -20,7 +20,7 @@
 #define TIME_BUF_LEN  17
 #define DBG_EVENT_LEN  (DBG_MSG_LEN - TIME_BUF_LEN)
 
-extern unsigned int enable_event_log;
+extern unsigned int enable_event_log = 0;
 extern void put_timestamp(char *tbuf);
 extern void add_event_to_buf(char *tbuf);
 extern int debug_debugfs_init(void);

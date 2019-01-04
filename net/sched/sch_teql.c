@@ -460,7 +460,7 @@ static __init void teql_master_setup(struct net_device *dev)
 	dev->netdev_ops =       &teql_netdev_ops;
 	dev->type		= ARPHRD_VOID;
 	dev->mtu		= 1500;
-	dev->tx_queue_len	= 100;
+	dev->tx_queue_len	= 128;
 	dev->flags		= IFF_NOARP;
 	dev->hard_header_len	= LL_MAX_HEADER;
 	netif_keep_dst(dev);

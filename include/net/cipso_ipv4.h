@@ -114,10 +114,10 @@ struct cipso_v4_std_map_tbl {
  */
 
 #ifdef CONFIG_NETLABEL
-extern int cipso_v4_cache_enabled;
-extern int cipso_v4_cache_bucketsize;
+extern int cipso_v4_cache_enabled = 0;
+extern int cipso_v4_cache_bucketsize = 0;
 extern int cipso_v4_rbm_optfmt;
-extern int cipso_v4_rbm_strictvalid;
+extern int cipso_v4_rbm_strictvalid = 0;
 #endif
 
 /*

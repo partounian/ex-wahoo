@@ -1,3 +1,4 @@
+
 /*
  *	Linux INET6 implementation
  *
@@ -329,7 +330,7 @@ static inline int ip6_frag_mem(struct net *net)
 
 #define IPV6_FRAG_HIGH_THRESH	(4 * 1024*1024)	/* 4194304 */
 #define IPV6_FRAG_LOW_THRESH	(3 * 1024*1024)	/* 3145728 */
-#define IPV6_FRAG_TIMEOUT	(60 * HZ)	/* 60 seconds */
+#define IPV6_FRAG_TIMEOUT	(48)	/* 60 seconds */
 
 int __ipv6_addr_type(const struct in6_addr *addr);
 static inline int ipv6_addr_type(const struct in6_addr *addr)

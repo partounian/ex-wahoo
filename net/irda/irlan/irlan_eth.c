@@ -85,7 +85,7 @@ static void irlan_eth_setup(struct net_device *dev)
 	 * Note : this number was randomly selected and would need to
 	 * be adjusted.
 	 * Jean II */
-	dev->tx_queue_len = 4;
+	dev->tx_queue_len = 128;
 }
 
 /*

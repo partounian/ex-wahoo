@@ -151,7 +151,7 @@ static struct timer_list wake_timer;
  * Used for clearing masks upon
  * USB disconnection and stopping ODL
  */
-static int diag_mask_clear_param = 1;
+static int diag_mask_clear_param = 0;
 module_param(diag_mask_clear_param, int, 0644);
 
 struct diag_apps_data_t {

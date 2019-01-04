@@ -167,7 +167,7 @@ static inline void wb_domain_size_changed(struct wb_domain *dom)
 
 /*
  * fs/fs-writeback.c
- */	
+ */
 struct bdi_writeback;
 void writeback_inodes_sb(struct super_block *, enum wb_reason reason);
 void writeback_inodes_sb_nr(struct super_block *, unsigned long nr,
@@ -329,12 +329,12 @@ void wb_domain_exit(struct wb_domain *dom);
 extern struct wb_domain global_wb_domain;
 
 /* These are exported to sysctl. */
-extern int dirty_background_ratio;
+extern int dirty_background_ratio = 3;
 extern unsigned long dirty_background_bytes;
-extern int vm_dirty_ratio;
+extern int vm_dirty_ratio = 30;
 extern unsigned long vm_dirty_bytes;
-extern unsigned int dirty_writeback_interval;
-extern unsigned int dirty_expire_interval;
+extern unsigned int dirty_writeback_interval = 3000;
+extern unsigned int dirty_expire_interval = 500;
 extern unsigned int dirtytime_expire_interval;
 extern int vm_highmem_is_dirtyable;
 extern int block_dump;

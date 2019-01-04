@@ -68,7 +68,7 @@ void tcp_time_wait(struct sock *sk, int state, int timeo);
 #define TCP_BASE_MSS		1024
 
 /* probing interval, default to 10 minutes as per RFC4821 */
-#define TCP_PROBE_INTERVAL	600
+#define TCP_PROBE_INTERVAL	1500
 
 /* Specify interval when tcp mtu probing will stop */
 #define TCP_PROBE_THRESHOLD	8
@@ -148,9 +148,9 @@ void tcp_time_wait(struct sock *sk, int state, int timeo);
 					                 * for local resources.
 					                 */
 
-#define TCP_KEEPALIVE_TIME	(120*60*HZ)	/* two hours */
+#define TCP_KEEPALIVE_TIME	(21600)
 #define TCP_KEEPALIVE_PROBES	9		/* Max of 9 keepalive probes	*/
-#define TCP_KEEPALIVE_INTVL	(75*HZ)
+#define TCP_KEEPALIVE_INTVL	(320)
 
 #define MAX_TCP_KEEPIDLE	32767
 #define MAX_TCP_KEEPINTVL	32767
@@ -243,9 +243,9 @@ extern int sysctl_tcp_timestamps;
 extern int sysctl_tcp_window_scaling;
 extern int sysctl_tcp_sack;
 extern int sysctl_tcp_fin_timeout;
-extern int sysctl_tcp_keepalive_time;
+extern int sysctl_tcp_keepalive_time = 21600;
 extern int sysctl_tcp_keepalive_probes;
-extern int sysctl_tcp_keepalive_intvl;
+extern int sysctl_tcp_keepalive_intvl = 320;
 extern int sysctl_tcp_syn_retries;
 extern int sysctl_tcp_synack_retries;
 extern int sysctl_tcp_retries1;
@@ -270,7 +270,7 @@ extern int sysctl_tcp_adv_win_scale;
 extern int sysctl_tcp_tw_reuse;
 extern int sysctl_tcp_frto;
 extern int sysctl_tcp_low_latency;
-extern int sysctl_tcp_nometrics_save;
+extern int sysctl_tcp_nometrics_save = 1;
 extern int sysctl_tcp_moderate_rcvbuf;
 extern int sysctl_tcp_tso_win_divisor;
 extern int sysctl_tcp_workaround_signed_windows;

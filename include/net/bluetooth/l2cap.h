@@ -906,8 +906,8 @@ static inline long l2cap_chan_no_get_sndtimeo(struct l2cap_chan *chan)
 	return 0;
 }
 
-// Set by Patrick Artounian
-extern bool disable_ertm = true;
+static bool disable_ertm = true;
+extern bool disable_ertm;
 
 int l2cap_init_sockets(void);
 void l2cap_cleanup_sockets(void);

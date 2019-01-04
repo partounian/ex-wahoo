@@ -32,7 +32,6 @@
 #include <net/bluetooth/hci_core.h>
 #include <net/bluetooth/sco.h>
 
-// Set by Patrick Artounian
 static bool disable_esco = true;
 
 static const struct proto_ops sco_sock_ops;

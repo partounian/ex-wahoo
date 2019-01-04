@@ -1,4 +1,4 @@
-vfs_cache_pressure#ifndef __LINUX_DCACHE_H
+#ifndef __LINUX_DCACHE_H
 #define __LINUX_DCACHE_H
 
 #include <linux/atomic.h>

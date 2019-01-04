@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  kernel:
+    build: .
+    volumes:
+      - ccache:/.ccache
+
+volumes:
+  ccache:

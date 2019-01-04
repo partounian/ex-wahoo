@@ -5,6 +5,7 @@ services:
     build: .
     volumes:
       - ccache:/.ccache
+      - $PWD/arch/arm64/boot/:/src/arch/arm64/boot/
 
 volumes:
   ccache:

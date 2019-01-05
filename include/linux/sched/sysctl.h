@@ -35,9 +35,9 @@ enum { sysctl_hung_task_timeout_secs = 0 };
 
 extern int sysctl_max_map_count;
 
-extern unsigned int sysctl_sched_latency = 15000000;
-extern unsigned int sysctl_sched_min_granularity = 2000000;
-extern unsigned int sysctl_sched_wakeup_granularity = 10000000;
+extern unsigned int sysctl_sched_latency;
+extern unsigned int sysctl_sched_min_granularity;
+extern unsigned int sysctl_sched_wakeup_granularity;
 extern unsigned int sysctl_sched_child_runs_first;
 extern unsigned int sysctl_sched_sync_hint_enable;
 extern unsigned int sysctl_sched_initial_task_util;

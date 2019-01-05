@@ -113,7 +113,7 @@ EXPORT_SYMBOL(devfreq_get_freq_level);
  * @devfreq:	the devfreq instance
  * @freq:	the update target frequency
  */
-static int devfreq_update_status(struct devfreq *devfreq, unsigned long freq)
+int devfreq_update_status(struct devfreq *devfreq, unsigned long freq)
 {
 	int lev, prev_lev, ret = 0;
 	unsigned long cur_time;

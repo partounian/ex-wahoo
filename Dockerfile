@@ -1,17 +1,15 @@
 FROM ubuntu:latest
 
-WORKDIR /src
-
 RUN apt update && \
   apt upgrade -y && \
-  apt install -y automake bc bison ccache lzop flex gperf build-essential \
-  zip curl zlib1g-dev git libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
-  libghc-bzlib-dev squashfs-tools pngcrush python-networkx schedtool \
-  lib32ncurses5-dev lib32z-dev dpkg-dev libssl-dev liblz4-tool make optipng && \
+  apt install -y automake bc build-essential bzip2 ccache curl dpkg-dev git gperf \
+  libghc-bzlib-dev libncurses-dev libz-dev libssl-dev liblz4-tool \
+  make pngquant python-networkx schedtool squashfs-tools zlib1g && \
   apt-get autoremove && \
   apt clean
 
-RUN mkdir -p prebuilts/gcc/linux-x86/aarch64/ prebuilts/gcc/linux-x86/arm/ \
+RUN mkdir /toolchain && cd /toolchain \
+  mkdir -p prebuilts/gcc/linux-x86/aarch64/ prebuilts/gcc/linux-x86/arm/ \
   prebuilts-master/clang/host/linux-x86/ prebuilts-master/misc/linux-x86/ && \
   git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 && \
   git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 && \
@@ -23,6 +21,6 @@ RUN mkdir -p prebuilts/gcc/linux-x86/aarch64/ prebuilts/gcc/linux-x86/arm/ \
 ENV USE_CCACHE=1
 ENV ANDROID_JACK_VM_ARGS="-Xmx8g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
-COPY . /src
+WORKDIR /src
 
 CMD ["bash", "-c", "set -o allexport && source build.config.clang.lto && make $DEFCONFIG && make -j$(nproc)"]

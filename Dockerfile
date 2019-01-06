@@ -19,8 +19,8 @@ RUN mkdir /toolchain && cd /toolchain \
   git clone https://android.googlesource.com/platform/system/libufdt prebuilts-master/misc/linux-x86/libufdt
 
 ENV USE_CCACHE=1
-ENV ANDROID_JACK_VM_ARGS="-Xmx8g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+ENV ANDROID_JACK_VM_ARGS="-Xmx12g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
 WORKDIR /src
 
-CMD ["bash", "-c", "set -o allexport && source build.config.clang.lto && make $DEFCONFIG && make -j$(nproc)"]
+CMD ["bash", "-c", "set -o allexport && source build.config.clang.lto && make $DEFCONFIG && source .config && make -j$(nproc --all)"]
